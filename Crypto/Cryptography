@@ -1,0 +1,23 @@
+#!/usr/bin/env ruby
+
+require 'gtk3'
+require 'fileutils'
+
+application_root_path = File.expand_path(__dir__)
+Dir[File.join(application_root_path,'**','*.rb')].each { |file| require file }
+
+resource_xml = File.join(application_root_path, 'fresource.xml')
+resource_bin = File.join(application_root_path, 'fresource.bin')
+
+system("glib-compile-resources", "--target", resource_bin, "--sourcedir",File.dirname(resource_xml), resource_xml)
+
+resource = Gio::Resource.load(resource_bin)
+Gio::Resources.register(resource)
+
+at_exit do
+    FileUtils.rm_f(resource_bin)
+end
+
+app = Finder::Application.new
+
+puts app.run 

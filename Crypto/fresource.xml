@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gresources>
+  <gresource prefix="/com/iridakos/Crypto">
+    <file preprocess="xml-stripblanks">Crypto.ui</file>
+    <!--<file preprocess="xml-stripblanks">sWindow.ui</file>-->
+  </gresource>
+  <gresource prefix="/com/iridakos/Crypto">
+    <file preprocess="xml-stripblanks">caesarwin.ui</file>
+  </gresource>
+  <gresource prefix="/com/iridakos/Crypto">
+    <file preprocess="xml-stripblanks">vig.ui</file>
+  </gresource>
+</gresources> 
